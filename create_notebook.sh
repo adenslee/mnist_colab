@@ -1,3 +1,7 @@
+#!/bin/bash
+
+# 创建notebook内容
+cat > colab_training.ipynb << 'EOL'
 {
  "cells": [
   {
@@ -288,3 +292,7 @@
  "nbformat": 4,
  "nbformat_minor": 4
 }
+EOL
+
+# 设置执行权限
+chmod +x create_notebook.sh 
