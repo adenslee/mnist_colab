@@ -238,43 +238,42 @@ DeepSeek-R1 series support commercial use, allow for any modifications and deriv
 ## 9. Contact
 If you have any questions, please raise an issue or contact us at [service@deepseek.com](service@deepseek.com).
 
-# DeepSeek-R1-Distill-Qwen-1.5B 模型微调实验
+# DeepSeek-R1 Fine-tuning Project
 
-这个项目包含了一个用于在 Google Colab 上微调 DeepSeek-R1-Distill-Qwen-1.5B 模型的 Jupyter 笔记本。
+This repository contains code and instructions for fine-tuning the DeepSeek-R1-Distill-Qwen-1.5B model using Google Colab.
 
-## 功能特点
+## Features
+- Efficient fine-tuning using LoRA (Low-Rank Adaptation)
+- 8-bit quantization for memory efficiency
+- Automatic saving of checkpoints to Google Drive
+- Real-time training progress monitoring
+- Support for custom dataset input
 
-- 使用 LoRA 方法进行高效微调
-- 支持 8-bit 量化以减少内存使用
-- 自动保存到 Google Drive
-- 包含完整的训练和测试流程
+## Usage
+1. Open the `colab_training.ipynb` notebook in Google Colab
+2. Follow the step-by-step instructions in the notebook
+3. Configure your training parameters
+4. Start the fine-tuning process
 
-## 使用方法
-
-1. 打开 [Google Colab](https://colab.research.google.com)
-2. 点击 "File" -> "Open notebook"
-3. 选择 "GitHub" 标签
-4. 输入本仓库的 URL
-5. 选择 `colab_training.ipynb` 文件
-
-## 环境要求
-
-- Google Colab (推荐使用 GPU 运行时)
-- Google Drive (用于保存模型)
+## Environment Requirements
 - Python 3.8+
 - PyTorch 2.0+
+- Transformers 4.30+
+- Accelerate 0.20+
+- PEFT 0.4+
 
-## 主要依赖
+## Main Dependencies
+```python
+torch>=2.0.0
+transformers>=4.30.0
+accelerate>=0.20.0
+peft>=0.4.0
+bitsandbytes>=0.40.0
+```
 
-- transformers==4.36.2
-- datasets
-- accelerate
-- bitsandbytes
-- peft
-
-## 注意事项
-
-- 请确保 Colab 运行时类型设置为 GPU
-- 训练前需要挂载 Google Drive
-- 默认使用 8-bit 量化以适应 Colab 环境
-- 可以根据需要修改训练数据和参数
+## Important Notes
+1. Make sure to use a GPU runtime in Google Colab
+2. Monitor your GPU memory usage during training
+3. Save checkpoints regularly to avoid data loss
+4. Adjust batch size based on available GPU memory
+5. Modify the learning rate and training steps as needed
